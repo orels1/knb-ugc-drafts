@@ -1,8 +1,12 @@
 .delete-draft,.push-draft{
-  float:left;
+	float:left;
 }
 .clear{clear: both;}
 
-.save-draft{
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+.save-draft,.autosave-draft{
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.push-autosaved{
+	border-top: 1px solid rgba(0,0,0,0.1);
 }
