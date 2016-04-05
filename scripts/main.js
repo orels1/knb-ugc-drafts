@@ -21,9 +21,10 @@
 			localStorage.setItem('drafts-autosave',JSON.stringify({"content":''}));
 		}
 
-		//Display drafts button, after a delay for DOM to build
+		//Display elements after a delay for DOM to build
 		setTimeout(function(){
 			addDrafts();
+			addLength();
 		}, 500);	
 
 		//Get and parse settings
@@ -35,6 +36,24 @@
 				autosaveDraft();
 			}
 		}, 120000);
+
+		//Add length counter to Editor
+		var addLength = function(){
+
+			//Append counter to Editor footer
+			$('.popup-footer').append('<div class="ugc-length"></div>');
+			var element = $('.ugc-length');
+
+			//Add counter
+			element.append('Использовано символов: ');
+			element.append('<span id="ugc-length-current">0</span>');
+			element.append(' / 40000');
+
+			//Bind onChange events to track the length updates
+			$('.redactor_post-editor-textarea').bind("DOMSubtreeModified", function(){
+				$('#ugc-length-current').text($(this).html().length);
+			});
+		}
 
 		//Add Draft button to Editor
 		var addDrafts = function(){

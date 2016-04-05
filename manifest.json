@@ -17,6 +17,6 @@
    "name": "Kanobu Черновики",
    "permissions": [ "http://kanobu.ru/*", "notifications", "tabs", "storage", "alarms", "background" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "1.0",
+   "version": "1.1",
    "web_accessible_resources": [ "images/icons/icon48.png", "scripts/3rd-party/jquery.min.map" ]
 }
